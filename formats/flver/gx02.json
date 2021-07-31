@@ -3,5 +3,6 @@
     { "name": "unk_04 : int",   "bits": 4, "type": 3 },
     { "name": "unk_08 : int",   "bits": 4, "type": 3 },
     { "name": "unk_0c : float", "bits": 4, "type": 4 },
-    { "name": "unk_0c : float", "bits": 4, "type": 4 }
+    { "name": "unk_10 : float", "bits": 4, "type": 4 },
+    { "bits": 12 }
 ]
