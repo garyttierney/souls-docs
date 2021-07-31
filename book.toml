@@ -1,0 +1,6 @@
+[book]
+authors = ["Gary Tierney"]
+language = "en"
+multilingual = false
+src = "src"
+title = "Souls Docs"
