@@ -147,6 +147,22 @@
                         <h1 id="definitions-of-gxitem-formats-in-dark-souls-iii"><a class="header" href="#definitions-of-gxitem-formats-in-dark-souls-iii">Definitions of GXItem formats in Dark Souls III</a></h1>
 <p>Items are described according to the <code>ID</code> field in the header.</p>
 <h2 id="gx02"><a class="header" href="#gx02">GX02</a></h2>
+<p>GX02 is read by the game (at <code>0x1401412f5</code>) as:</p>
+<h3 id="decoder"><a class="header" href="#decoder">Decoder</a></h3>
+<pre><code class="language-c">              *(int*)(material + 0x110) = read_int32(buffer-&gt;data);
+              *(int*)(material + 0x114) = read_int32(buffer-&gt;data + 4);
+              *(int*)(material + 0x120) = read_int32(buffer-&gt;data + 8);
+              *(float*)(material + 0x118) = read_float32(buffer-&gt;data + 0xc);
+              *(float*)(material + 0x11c) = read_float32(buffer-&gt;data + 0x10);
+              puVar9 = local_res8;
+              if (5 &lt; (int)*(uint *)(material + 0x4e8)) {
+                puVar9 = (uint *)(material + 0x4e8);
+              }
+              uVar6 = *puVar9;
+              *(undefined *)(material + 0xdd) = 1;
+              *(uint *)(material + 0x4e8) = uVar6;
+</code></pre>
+<h3 id="structure"><a class="header" href="#structure">Structure</a></h3>
 <pre><code class="language-c">struct GX02 { // also toggles [material+0xdd] to 1
    int unk_0;
    int unk_04;
